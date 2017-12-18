@@ -141,7 +141,7 @@ export default class PreviewPane extends React.Component {
       .map((style, i) => <link key={i} href={style} type="text/css" rel="stylesheet" />);
 
     document.querySelectorAll('style[data-styled-components]')
-      .map(styleEl => styleEls.push(styleEl.outerHTML))
+      .forEach(styleEl => styleEls.push(styleEl.outerHTML));
 
     if (!collection) {
       return <Frame className="nc-previewPane-frame" head={styleEls} />;
